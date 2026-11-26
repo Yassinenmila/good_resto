@@ -1,7 +1,11 @@
 {
+    "name": "yassine/good-resto",
+    "description": "Restaurant management application",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
         }
-    }
+    },
+    "require": {}
 }
