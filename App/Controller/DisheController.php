@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Core\Controller;
 
-class DishesController extends Controller {
+class DisheController extends Controller {
     public function index() {
         // Handle logic to display dishes here
     }

@@ -2,8 +2,10 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Controller\HomeController;
+use App\Core\Router;
 
-$controller = new HomeController();
+$router = new Router();
 
-$controller->index();
+require_once __DIR__ . '/../App/Router.php';
+
+$router->dispatch();

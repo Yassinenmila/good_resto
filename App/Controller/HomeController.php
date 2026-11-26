@@ -7,7 +7,7 @@ use App\Core\Controller;
 class HomeController extends Controller {
 
     public function index() {
-        echo 'hello this is home page !!!!!';
+        $this->view->run('pages.home');
     }
 
 }
