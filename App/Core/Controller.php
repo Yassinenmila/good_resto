@@ -4,24 +4,24 @@ namespace App\core;
 
 use eftec\bladeone\BladeOne;
 
-class Controller {
-
+class Controller
+{
     protected BladeOne $blade;
 
-    public function __construct(){
+    public function __construct()
+    {
+        $view = dirname(__DIR__, 2) . "/App/views";
+        $cache = dirname(__DIR__, 2) . "/cache";
 
-    $view= __DIR__."/../views";
-    $cache = sys_get_temp_dir(); 
-        
-    $this->blade = new BladeOne(
-        $view,
-        $cache,
-        BladeOne::MODE_DEBUG
-    );
-
+        $this->blade = new BladeOne(
+            $view,
+            $cache,
+            BladeOne::MODE_DEBUG
+        );
     }
 
-    protected function view($view,$data=[]){
-        echo $this->blade->run($view,$data);
+    protected function view($view, $data = [])
+    {
+        echo $this->blade->run($view, $data);
     }
 }

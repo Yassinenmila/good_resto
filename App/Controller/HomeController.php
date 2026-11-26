@@ -7,7 +7,9 @@ use App\Core\Controller;
 class HomeController extends Controller {
 
     public function index() {
-        $this->view->run('pages.home');
+        $this->view('pages.home',[
+            'title' => 'Home Page',
+        ]);
     }
 
 }
