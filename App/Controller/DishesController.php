@@ -1,6 +1,10 @@
 <?php
 
-class DishesController {
+namespace App\Controller;
+
+use App\Core\Controller;
+
+class DishesController extends Controller {
     public function index() {
         // Handle logic to display dishes here
     }

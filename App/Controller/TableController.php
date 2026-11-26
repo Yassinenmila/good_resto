@@ -1,6 +1,10 @@
 <?php
 
-class TableController {
+namespace App\Controller;
+
+use App\Core\Controller;
+
+class TableController extends Controller {
     public function index() {
         // Handle table logic here
     }

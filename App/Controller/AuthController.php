@@ -1,6 +1,9 @@
 <?php 
+namespace App\Controller;
 
-class AuthController {
+use App\Core\Controller;
+    
+class AuthController extends Controller {
     public function login() {
         // Handle login logic here
     }

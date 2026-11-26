@@ -1,6 +1,10 @@
 <?php
 
-class BookingController {
+namespace App\Controller;
+
+use App\Core\Controller;
+
+class BookingController extends Controller {
     public function book() {
         // Handle booking logic here
     }
