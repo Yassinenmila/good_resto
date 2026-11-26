@@ -22,7 +22,6 @@ create table tables (
     number int not null unique,
     capacity int not null,
     is_active boolean not null default true,
-
     created_at timestamp default current_timestamp
 );
 
@@ -30,6 +29,7 @@ create table bookings (
     id int auto_increment primary key,
     user_id int not null,
     table_id int not null,
+    number_of_guests int not null,
     booking_time datetime not null,
     booking_date date not null,
     status ENUM('pending', 'confirmed', 'cancelled') not null default 'pending',
