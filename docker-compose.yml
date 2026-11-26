@@ -1,0 +1,33 @@
+services:
+  php:
+    build: .
+    container_name: php_app
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy_server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - php
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: good_resto
+      MYSQL_USER: yassine
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
