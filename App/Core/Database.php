@@ -11,13 +11,16 @@ class Database
 
     public function __construct()
     {
-        $config = require __DIR__ . '/../../config/database.php';
+        $host = 'localhost';
+        $dbname = 'good_resto';
+        $username = 'good_resto';
+        $password = 'GoodResto123!';
 
         try {
             $this->connection = new PDO(
-                "mysql:host={$config['host']};dbname={$config['dbname']};charset=utf8mb4",
-                $config['username'],
-                $config['password']
+                "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+                $username,
+                $password
             );
 
             $this->connection->setAttribute(
@@ -25,15 +28,8 @@ class Database
                 PDO::ERRMODE_EXCEPTION
             );
 
-            $this->connection->setAttribute(
-                PDO::ATTR_DEFAULT_FETCH_MODE,
-                PDO::FETCH_ASSOC
-            );
-
         } catch (PDOException $e) {
-            throw new PDOException(
-                "Erreur de connexion à la base de données."
-            );
+            die("Database connection failed: " . $e->getMessage());
         }
     }
 
